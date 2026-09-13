@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Consulta pública ao Dicionário de Legislação Ambiental Brasileira, versão 0.9.4."
+    />
+    <meta name="theme-color" content="#174f46" />
+    <title>Dicionário de Legislação Ambiental Brasileira</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#resultados">Ir para os resultados</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Página inicial do dicionário">
+          <span class="brand-mark" aria-hidden="true">D</span>
+          <span>
+            <span class="eyebrow">Legislação brasileira</span>
+            <span class="brand-title">Dicionário Ambiental</span>
+          </span>
+        </a>
+        <span class="version-badge">Versão pública · v0.9.4</span>
+      </header>
+
+      <main>
+        <section class="search-band" aria-labelledby="search-title">
+          <div>
+            <label class="search-label" id="search-title" for="search-input">Pesquisar verbete</label>
+            <div class="search-box">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <input id="search-input" type="search" autocomplete="off" placeholder="Termo, definição, norma, alias ou nota…" />
+              <button id="clear-search" type="button" aria-label="Limpar pesquisa" hidden>Limpar</button>
+            </div>
+            <p class="search-help">A pesquisa ignora acentos e inclui definições, aliases e notas editoriais.</p>
+          </div>
+          <div class="stats" aria-label="Estatísticas da base">
+            <div><strong id="stat-terms">—</strong><span>verbetes</span></div>
+            <div><strong id="stat-definitions">—</strong><span>definições</span></div>
+            <div><strong id="stat-norms">—</strong><span>normas</span></div>
+            <div><strong id="stat-notes">—</strong><span>notas</span></div>
+          </div>
+        </section>
+
+        <div class="dictionary-grid">
+          <aside class="filter-rail" aria-label="Filtros da pesquisa">
+            <div class="rail-title">
+              <h2>Filtros</h2>
+              <button id="clear-filters" type="button">Limpar</button>
+            </div>
+            <div class="filter-group">
+              <label for="norm-filter">Norma</label>
+              <select id="norm-filter"><option value="">Todas as normas</option></select>
+            </div>
+            <div class="filter-group">
+              <label for="theme-filter">Tema</label>
+              <select id="theme-filter"><option value="">Todos os temas</option></select>
+            </div>
+            <div class="editorial-note">
+              <strong>Edição pública para consulta</strong>
+              Esta versão é estática, sem autenticação ou edição. As definições reproduzem a base v0.9.4 e as notas editoriais permanecem disponíveis nos verbetes.
+            </div>
+          </aside>
+
+          <section class="results-column" id="resultados" aria-labelledby="results-title">
+            <div class="column-head">
+              <h2 id="results-title">Verbetes</h2>
+              <span class="count" id="result-count" aria-live="polite">Carregando…</span>
+            </div>
+            <div class="result-list" id="result-list" aria-busy="true"></div>
+            <button class="load-more" id="load-more" type="button" hidden>Mostrar mais</button>
+          </section>
+
+          <article class="detail-column" id="detail" aria-live="polite">
+            <div class="empty-state">
+              <div>
+                <strong>Carregando a base normativa…</strong>
+                <p>A consulta estará disponível em instantes.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span>Dicionário de Legislação Ambiental Brasileira · base v0.9.4</span>
+        <a href="https://github.com/marceloreis/dicionario_ambiental" target="_blank" rel="noreferrer">Código e dados no GitHub</a>
+      </footer>
+    </div>
+    <noscript>Esta consulta exige JavaScript para carregar e pesquisar a base local.</noscript>
+  </body>
+</html>
