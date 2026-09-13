@@ -10,6 +10,10 @@ A edição estática está em `static-site/` e é publicada automaticamente em
 `.github/workflows/pages.yml`. O artefato reutiliza, sem duplicação, a base
 `public/data/dicionario_ambiental_v0_9_4.json`.
 
+O `index.html` da raiz oferece a mesma interface quando o Pages estiver
+configurado para publicar diretamente a branch `main`; assim, os dois modos de
+publicação suportados pelo GitHub conduzem à edição estática.
+
 ## Escopo do protótipo
 
 - consulta a 1.309 termos e 1.457 registros normativos de 97 normas;

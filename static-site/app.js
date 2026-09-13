@@ -1,6 +1,6 @@
 "use strict";
 
-const DATA_URL = "./data/dicionario_ambiental_v0_9_4.json";
+const DATA_URL = document.documentElement.dataset.dictionaryUrl || "./data/dicionario_ambiental_v0_9_4.json";
 const PAGE_SIZE = 40;
 
 const state = {
