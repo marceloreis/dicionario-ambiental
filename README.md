@@ -6,13 +6,27 @@ Aplicação de consulta à base normativa v0.9.4 em duas edições complementare
 - **ChatGPT Sites:** aplicação completa, com autenticação e ambiente editorial.
 
 A edição estática está em `static-site/` e é publicada automaticamente em
-<https://marceloreis.github.io/dicionario_ambiental/> pelo workflow
+<https://marceloreis.github.io/dicionario-ambiental/> pelo workflow
 `.github/workflows/pages.yml`. O artefato reutiliza, sem duplicação, a base
-`public/data/dicionario_ambiental_v0_9_4.json`.
+`public/data/dicionario-ambiental_v0_9_4.json`.
 
 O `index.html` da raiz oferece a mesma interface quando o Pages estiver
 configurado para publicar diretamente a branch `main`; assim, os dois modos de
 publicação suportados pelo GitHub conduzem à edição estática.
+
+## Edição dinâmica
+
+A aplicação dinâmica permanece na raiz do repositório, com interface Next/Vinext,
+autenticação, APIs editoriais, Drizzle ORM e persistência D1. Para executar o
+ambiente de desenvolvimento:
+
+```bash
+git clone https://github.com/marceloreis/dicionario-ambiental.git
+cd dicionario-ambiental
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
 ## Escopo do protótipo
 
@@ -41,6 +55,6 @@ Para testar localmente, monte o artefato e inicie um servidor HTTP:
 ```bash
 mkdir -p _site/data
 cp -R static-site/. _site/
-cp public/data/dicionario_ambiental_v0_9_4.json _site/data/
+cp public/data/dicionario-ambiental_v0_9_4.json _site/data/
 python3 -m http.server --directory _site 8000
 ```

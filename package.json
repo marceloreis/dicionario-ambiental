@@ -1,6 +1,6 @@
 {
-  "name": "site-creator-vinext-starter",
-  "version": "0.1.0",
+  "name": "dicionario-ambiental",
+  "version": "0.9.4",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
